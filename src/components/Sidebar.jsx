@@ -19,18 +19,18 @@ const Sidebar = ({ currentView, setView, gems, hearts }) => {
                 position: 'fixed',
                 left: '20px',
                 top: '20px',
-                padding: '2.5rem 1.25rem',
+                padding: '1.5rem 1.25rem',
                 display: 'flex',
                 flexDirection: 'column',
                 zIndex: 10
             }}>
-                <div style={{ marginBottom: '3.5rem', padding: '0 1rem' }}>
+                <div style={{ marginBottom: '2rem', padding: '0 1rem' }}>
                     <h1 style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '-0.03em' }}>
                         <span style={{ color: 'var(--primary)', textShadow: '0 0 15px var(--primary-glow)' }}>DAILY</span> PATH
                     </h1>
                 </div>
 
-                <nav style={{ flex: 1 }}>
+                <nav style={{ flex: 1, minHeight: 0 }}>
                     {menuItems.map((item) => (
                         <motion.button
                             key={item.id}
@@ -42,10 +42,10 @@ const Sidebar = ({ currentView, setView, gems, hearts }) => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '1rem',
-                                padding: '1.25rem',
+                                padding: '1rem',
                                 background: currentView === item.id ? 'rgba(139, 92, 246, 0.15)' : 'transparent',
                                 color: currentView === item.id ? 'var(--primary)' : 'var(--text-muted)',
-                                marginBottom: '0.75rem',
+                                marginBottom: '0.5rem',
                                 borderRadius: '1.25rem',
                                 textAlign: 'left',
                                 position: 'relative',
@@ -64,7 +64,7 @@ const Sidebar = ({ currentView, setView, gems, hearts }) => {
                     ))}
                 </nav>
 
-                <div className="glass-card" style={{ marginTop: 'auto', padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)' }}>
+                <div className="glass-card" style={{ marginTop: 'auto', padding: '1.25rem', background: 'rgba(255, 255, 255, 0.03)', flexShrink: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                         <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
                             <Heart size={20} color="#ef4444" fill="#ef4444" />
