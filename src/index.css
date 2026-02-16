@@ -91,3 +91,104 @@ button {
 button:active {
   transform: scale(0.95);
 }
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile Devices (320px - 767px) */
+@media (max-width: 767px) {
+  .main-content {
+    margin-left: 0;
+    margin-bottom: 80px;
+    /* Space for bottom nav */
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* Hide desktop sidebar on mobile */
+  .app-container>aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  /* Adjust font sizes for mobile */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Single column layouts */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Smaller padding on cards */
+  .glass,
+  .glass-card {
+    padding: 1rem !important;
+    border-radius: 1rem !important;
+  }
+
+  /* Make buttons full-width on mobile */
+  button {
+    min-height: 44px;
+    /* Touch-friendly */
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content {
+    margin-left: 200px;
+    padding: 1.5rem;
+  }
+
+  /* Adjust sidebar for tablets */
+  .app-container>aside {
+    width: 200px;
+  }
+
+  /* Two-column grids on tablets */
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Desktop (1024px+) - Default styles apply */
+@media (min-width: 1024px) {
+  .main-content {
+    margin-left: 280px;
+    padding: 2rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+  button,
+  [role="button"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase tap targets */
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+}
